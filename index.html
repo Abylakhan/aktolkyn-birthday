@@ -366,25 +366,23 @@ svg.sign.draw text:nth-of-type(2){animation-delay:.8s,3.2s}
 .cnt span{font-size:10px;letter-spacing:.2em;text-transform:uppercase;opacity:.8}
 
 
-/* ===== аспаннан құлау ===== */
-.fall{position:relative;height:640svh;z-index:2}
-.fall-st{position:sticky;top:0;height:100svh;overflow:hidden}
-.fall-st.shake{animation:fshake .5s cubic-bezier(.3,.1,.3,1)}
-@keyframes fshake{10%,50%,90%{transform:translate(-6px,4px)}30%,70%{transform:translate(6px,-4px)}}
-.fall-sky{position:absolute;inset:0;pointer-events:none}
-.fall .cl{position:absolute;left:0;top:0;border-radius:50%;pointer-events:none;will-change:transform,opacity;
-  background:radial-gradient(ellipse at 50% 50%,rgba(255,255,255,.6),rgba(230,235,255,.22) 40%,transparent 70%)}
-.fall .wd{position:absolute;left:0;top:0;width:1.5px;border-radius:2px;background:linear-gradient(transparent,rgba(255,255,255,.7));will-change:transform}
-.fall-hero{position:absolute;left:50%;top:44%;font-size:46px;color:#fff;text-shadow:0 0 20px #fff,0 0 40px var(--coral),0 0 70px var(--gold);will-change:transform}
-.fall-alt{position:absolute;left:0;right:0;top:calc(env(safe-area-inset-top) + 86px);text-align:center;display:flex;flex-direction:column;align-items:center;gap:2px}
-.fall-alt small{font-size:9px;letter-spacing:.45em;text-transform:uppercase;color:var(--moon)}
-.fall-alt b{font-weight:800;font-size:46px;letter-spacing:-.02em;font-variant-numeric:tabular-nums;text-shadow:0 0 20px rgba(155,231,255,.6)}
-.fall-msg{position:absolute;left:16px;right:16px;top:63%;text-align:center;font-family:var(--serif);font-style:italic;font-weight:700;font-size:clamp(24px,7vw,38px);line-height:1.2;
-  transition:opacity .5s,transform .6s cubic-bezier(.2,1.4,.4,1),filter .5s}
-.fall-msg.out{opacity:0;transform:translateY(30px) scale(.9);filter:blur(8px)}
-.fall-sea{position:absolute;left:0;bottom:0;width:100%;height:38svh;will-change:transform}
-.fall-sea .sw1{animation:seaMove 4s linear infinite}.fall-sea .sw2{animation:seaMove 6s linear infinite reverse}
-@keyframes seaMove{to{transform:translateX(-200px)}}
+/* ===== гүл ашылуы ===== */
+.bloom{position:relative;height:420svh;z-index:2}
+.bl-st{position:sticky;top:0;height:100svh;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;perspective:900px}
+.flower{position:relative;width:min(92vw,420px);height:min(92vw,420px);transform-style:preserve-3d;will-change:transform}
+.petal{position:absolute;left:50%;top:50%;width:calc(var(--len) * 24%);height:calc(var(--len) * 50%);transform-origin:50% 100%;
+  border-radius:50% 50% 50% 50%/70% 70% 30% 30%;opacity:.88;box-shadow:inset 0 -10px 20px rgba(255,255,255,.35),0 0 18px rgba(255,143,171,.35);will-change:transform}
+.pistil{position:absolute;left:50%;top:50%;width:18%;height:18%;transform:translate(-50%,-50%);border-radius:50%;
+  background:radial-gradient(circle,#fff,#f5d08a 45%,#ff8fab 80%);box-shadow:0 0 40px #f5d08a,0 0 80px #ff8fab;animation:beatC 1.3s infinite}
+.bl-name{position:absolute;left:50%;top:50%;font-family:var(--serif);font-style:italic;font-weight:700;font-size:clamp(44px,13vw,90px);white-space:nowrap;opacity:0;
+  color:#fff;text-shadow:0 0 20px #fff,0 0 50px var(--coral);pointer-events:none}
+/* ===== толқын әріптер ===== */
+.twave{position:relative;height:320svh;z-index:2}
+.tw-st{position:sticky;top:0;height:100svh;overflow:hidden}
+.tw-line{position:absolute;left:0;top:36%;width:100%;height:0}
+.tw-line.tw2{top:62%}
+.tw-line span{position:absolute;left:0;top:0;font-family:var(--serif);font-style:italic;font-weight:700;font-size:44px;line-height:1;will-change:transform;color:var(--pearl);text-shadow:0 0 16px rgba(155,231,255,.7)}
+.tw2 span{color:var(--coral);text-shadow:0 0 16px rgba(255,143,171,.7);font-size:38px}
 /* ===== сөздің ішіне ұшу ===== */
 .zoom{position:relative;height:340svh;z-index:2}
 .zoom-st{position:sticky;top:0;height:100svh;overflow:hidden;display:flex;align-items:center;justify-content:center}
@@ -505,18 +503,14 @@ svg.sign.draw text:nth-of-type(2){animation-delay:.8s,3.2s}
     <div class="swipe"><b></b>төмен</div>
   </section>
 
-  <section class="fall" id="fall"><div class="fall-st" id="fallSt">
-    <div class="fall-sky" id="fallSky"></div>
-    <div id="fallLayer"></div>
-    <div class="fall-hero" id="fallHero">✦</div>
-    <div class="fall-alt"><small>биіктік</small><b id="fallAlt">10 000</b><small>метр</small></div>
-    <div class="fall-msg" id="fallMsg"></div>
-    <svg class="fall-sea" id="fallSea" viewBox="0 0 400 200" preserveAspectRatio="none">
-      <defs><linearGradient id="seaG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9be7ff" stop-opacity=".9"/><stop offset=".35" stop-color="#2a6bd8" stop-opacity=".85"/><stop offset="1" stop-color="#04060f"/></linearGradient></defs>
-      <g class="sw2"><path d="M0 50 Q50 25 100 50 T200 50 T300 50 T400 50 T500 50 T600 50 V200 H0Z" fill="#9be7ff" fill-opacity=".35"/></g>
-      <g class="sw1"><path d="M0 70 Q50 40 100 70 T200 70 T300 70 T400 70 T500 70 T600 70 V200 H0Z" fill="url(#seaG)"/>
-        <path d="M0 70 Q50 40 100 70 T200 70 T300 70 T400 70 T500 70 T600 70" fill="none" stroke="#fff" stroke-width="2.5" stroke-opacity=".9"/></g>
-    </svg>
+  <section class="bloom" id="bloom"><div class="bl-st">
+    <div class="label">✦ саған гүл ✦</div>
+    <div class="flower" id="flower"></div>
+    <div class="bl-name" id="blName">Ақтолқын</div>
+  </div></section>
+
+  <section class="twave" id="twave"><div class="tw-st">
+    <div class="tw-line" id="twA"></div><div class="tw-line tw2" id="twB"></div>
   </div></section>
 
   <div class="bands">
@@ -1203,16 +1197,30 @@ new IntersectionObserver(([e])=>{if(!e.isIntersecting||cntDone)return;cntDone=tr
     const n=Math.floor(p);if(n!==pgPrev){pgPrev=n;buzz(12);if(AC&&soundOn)bell(hz(['E6','G6','A6','C7','D7','E7'][n%6]),AC.currentTime,.05,.9)}}
   requestAnimationFrame(fxMore)})(0);
 
-/* ================= Аспаннан құлау ================= */
-const flSec=document.getElementById('fall'),flSt=document.getElementById('fallSt'),flLayer=document.getElementById('fallLayer'),flHero=document.getElementById('fallHero'),
-  flAlt=document.getElementById('fallAlt'),flMsg=document.getElementById('fallMsg'),flSea=document.getElementById('fallSea'),flSky=document.getElementById('fallSky');
-const flObjs=[];
-for(let i=0;i<26;i++){const d=rnd(.4,2.4),el=document.createElement('div');el.className='cl';const w=rnd(140,320)*d;el.style.width=w+'px';el.style.height=w*.45+'px';
-  if(d<.8)el.style.filter='blur(3px)';flLayer.appendChild(el);flObjs.push({el,d,x:rnd(-.4,1),y0:rnd(0,1),w,kind:'c',band:rnd(.12,.85)})}
-for(let i=0;i<24;i++){const d=rnd(1.5,4),el=document.createElement('div');el.className='wd';el.style.height=rnd(40,140)*d/2+'px';flLayer.appendChild(el);flObjs.push({el,d,x:rnd(0,1),y0:rnd(0,1),kind:'w'})}
-const FLM=[[0,'Ақтолқын, саған аспаннан құттықтау ұшып келеді ✦'],[.2,'Жұлдыздардың арасынан…'],[.38,'Бұлттарды жарып өтеміз!'],[.58,'Бақыт жақындап қалды'],[.78,'Ақ толқындар көрінді!'],[.95,'Шолп! Қош келдің 🌊']];
-let flIdx=-1,flPrevP=0,flSplashed=false;
-function flSetMsg(i){flIdx=i;flMsg.classList.add('out');setTimeout(()=>{flMsg.textContent=FLM[i][1];flMsg.classList.remove('out')},300)}
+/* ================= Гүл ашылуы + толқын әріптер ================= */
+const blSec=document.getElementById('bloom'),flower=document.getElementById('flower'),blName=document.getElementById('blName'),petals=[];
+[[20,.98,'#ff8fab','#ffd1e8'],[16,.8,'#a78bfa','#ff8fab'],[12,.6,'#f5d08a','#ff8fab'],[8,.4,'#fff6e0','#f5d08a']].forEach(([n,len,c1,c2],k)=>{
+  for(let i=0;i<n;i++){const el=document.createElement('div');el.className='petal';el.style.background=`linear-gradient(to top,${c2},${c1})`;el.style.setProperty('--len',len);
+    flower.appendChild(el);petals.push({el,k,a:i/n*360+(k%2)*(180/n)})}});
+flower.insertAdjacentHTML('beforeend','<div class="pistil"></div>');
+const twSec=document.getElementById('twave');
+function twBuild(el,txt){el.innerHTML=[...txt].map(c=>`<span>${c===' '?'&nbsp;':c}</span>`).join('');return [...el.children]}
+const twA=twBuild(document.getElementById('twA'),'Ақтолқын — ақ толқын ✦ әрқашан жарқыра ✦'),twB=twBuild(document.getElementById('twB'),'бақытты бол ✦ күліп жүр ✦ армандай бер ✦');
+let blPrev=0;
+(function fxBloom(t){const ih=innerHeight,iw=innerWidth;let r=vr(blSec);
+  if(r.bottom>0&&r.top<ih){const p=Math.min(1,Math.max(0,-r.top/(r.height-ih)));
+    flower.style.transform=`rotateX(${(30-p*20+tiltY*10).toFixed(1)}deg) rotateZ(${(p*140+t/120).toFixed(1)}deg) scale(${(.55+p*.45).toFixed(3)})`;
+    for(const pt of petals){const o=Math.min(1,Math.max(0,(p-(3-pt.k)*.1)/.5)),e=1-Math.pow(1-o,3);
+      pt.el.style.transform=`translate(-50%,-100%) rotateZ(${pt.a.toFixed(1)}deg) rotateX(${((1-e)*82).toFixed(1)}deg) scaleY(${(.35+e*.65).toFixed(3)})`}
+    const np=Math.max(0,(p-.7)/.2);blName.style.opacity=Math.min(1,np).toFixed(2);blName.style.transform=`translate(-50%,-50%) scale(${(.6+Math.min(1,np)*.4).toFixed(3)})`;
+    if(p>.9&&blPrev<=.9){sChime();buzz([30,40,60]);for(let i=0;i<70;i++)spark(iw/2,ih/2,pick(['#ff8fab','#ffd1e8','#f5d08a']),{type:'c',vx:rnd(-8,8),vy:rnd(-10,2),g:.15,f:.985,life:rnd(120,200),size:rnd(6,11)})}
+    blPrev=p}
+  r=vr(twSec);
+  if(r.bottom>0&&r.top<ih){const p=Math.min(1,Math.max(0,-r.top/(r.height-ih))),amp=36+Math.min(60,Math.abs(sVel)*2),SP=30;
+    [[twA,1],[twB,-1]].forEach(([arr,dir])=>{const total=arr.length*SP,shift=dir>0?iw-p*(total+iw):-total+p*(total+iw);
+      arr.forEach((sp,i)=>{const x=shift+i*SP;if(x<-60||x>iw+20){sp.style.visibility='hidden';return}sp.style.visibility='visible';const ph=i*.35+p*14*dir+t/700;
+        sp.style.transform=`translate3d(${x.toFixed(1)}px,${(Math.sin(ph)*amp).toFixed(1)}px,0) rotate(${(Math.cos(ph)*25).toFixed(1)}deg) scale(${(1+Math.sin(ph)*.25).toFixed(3)})`})})}
+  requestAnimationFrame(fxBloom)})(0);
 /* ================= Сөздің ішіне ұшу ================= */
 const zmSec=document.getElementById('zoom'),zmW=document.getElementById('zoomW'),zmIn=document.getElementById('zoomIn'),zmFlash=document.getElementById('zoomFlash');let zmPrev=0;
 /* ================= Шымылдық ================= */
@@ -1220,24 +1228,8 @@ const cuSec=document.getElementById('curtain'),cuL=document.getElementById('cuL'
 function sClap(){if(!AC||!soundOn)return;for(let i=0;i<46;i++)setTimeout(()=>noise(.05,rnd(1100,2600),'bandpass',.55),rnd(0,2000))}
 const prog=(el,ih)=>{const r=vr(el);if(r.bottom<=0||r.top>=ih)return -1;return Math.min(1,Math.max(0,-r.top/(r.height-ih)))};
 (function fxFall(t){const ih=innerHeight,iw=innerWidth;
-  let p=prog(flSec,ih);
-  if(p>=0){const T=ih*5.5,cloudAmt=Math.max(0,Math.sin(Math.min(1,Math.max(0,(p-.12)/.66))*Math.PI));
-    for(const o of flObjs){const span=ih+600;let y=((o.y0*span-p*T*o.d)%span+span)%span-300;
-      if(o.kind==='c'){o.el.style.transform=`translate3d(${(o.x*iw).toFixed(0)}px,${y.toFixed(0)}px,0)`;o.el.style.opacity=(cloudAmt*Math.min(1,o.d*.5)).toFixed(2)}
-      else{o.el.style.transform=`translate3d(${(o.x*iw).toFixed(0)}px,${y.toFixed(0)}px,0)`;o.el.style.opacity=(.25+Math.min(.6,Math.abs(sVel)/40)).toFixed(2)}}
-    const alt=Math.max(0,Math.round((1-Math.min(1,p/.95))*10000));flAlt.textContent=alt.toLocaleString('ru-RU');
-    const seaP=Math.min(1,Math.max(0,(p-.68)/.27));flSea.style.transform=`translateY(${((1-seaP)*100).toFixed(1)}%)`;
-    flSky.style.background=`radial-gradient(ellipse at 50% 120%,rgba(155,231,255,${(seaP*.35).toFixed(2)}),transparent 60%),linear-gradient(rgba(4,6,15,${(.35-p*.3).toFixed(2)}),transparent)`;
-    const wob=Math.sin(t/300)*18+tiltX*40,dive=p>.93?(p-.93)/.07:0;
-    flHero.style.transform=`translate(-50%,-50%) translate(${wob.toFixed(1)}px,${(dive*ih*.35).toFixed(0)}px) rotate(${(t/8%360).toFixed(0)}deg) scale(${(1+Math.min(1,Math.abs(sVel)/30)*.6-dive*.7).toFixed(2)})`;
-    flHero.style.opacity=(1-Math.max(0,dive-.6)*2.5).toFixed(2);
-    if(p>.01&&p<.95&&Math.random()<.7){spark(iw/2+wob,ih*.44+dive*ih*.35,pick(PAL),{vx:rnd(-.6,.6),vy:-rnd(2,6),g:-.02,life:rnd(30,50),size:rnd(1.2,2.4)})}
-    let mi=0;for(let i=0;i<FLM.length;i++)if(p>=FLM[i][0])mi=i;if(mi!==flIdx)flSetMsg(mi);
-    if(p>=.95&&!flSplashed){flSplashed=true;flSt.classList.remove('shake');void flSt.offsetWidth;flSt.classList.add('shake');buzz([60,40,120]);noise(.9,700,'lowpass',.7);
-      for(let k=0;k<70;k++)spark(iw/2+rnd(-40,40),ih*.8,pick(['#ffffff','#9be7ff','#7cf5d0']),{vx:rnd(-6,6),vy:-rnd(5,14),g:.3,f:.99,life:rnd(50,90),size:rnd(2,4)});confetti(iw/2,ih*.75,120)}
-    if(p<.9)flSplashed=false;flPrevP=p}
   // сөздің ішіне ұшу
-  p=prog(zmSec,ih);
+  let p=prog(zmSec,ih);
   if(p>=0){const z=Math.pow(p,3)*70+1;zmW.style.transform=`scale(${z.toFixed(2)}) rotate(${(p*25).toFixed(1)}deg)`;zmW.style.opacity=(p<.55?1:Math.max(0,1-(p-.55)/.12)).toFixed(2);
     zmFlash.style.opacity=Math.max(0,1-Math.abs(p-.62)/.08).toFixed(2);
     const ip=Math.min(1,Math.max(0,(p-.6)/.25));zmIn.style.opacity=ip.toFixed(2);zmIn.style.transform=`scale(${(.5+ip*.5).toFixed(3)}) translateY(${((1-ip)*40).toFixed(0)}px)`;zmIn.style.letterSpacing=((1-ip)*.3).toFixed(2)+'em';
