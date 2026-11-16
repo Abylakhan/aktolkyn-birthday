@@ -288,7 +288,7 @@ svg.sign.draw text:nth-of-type(2){animation-delay:.8s,3.2s}
 
 
 /* ===== 3D туннель ===== */
-.tunnel{position:relative;height:340svh;z-index:2}
+.tunnel{position:relative;height:460svh;z-index:2}
 .tun-in{position:sticky;top:0;height:100svh;overflow:hidden;perspective:520px;perspective-origin:50% 50%}
 .tun-in .ti,.tun-in .tr,.tun-in .tz{position:absolute;left:50%;top:50%;will-change:transform,opacity}
 .tun-in .ti{white-space:nowrap;font-family:var(--serif);font-style:italic;font-weight:700;font-size:46px;text-shadow:0 0 18px currentColor}
@@ -300,7 +300,7 @@ svg.sign.draw text:nth-of-type(2){animation-delay:.8s,3.2s}
   background:linear-gradient(100deg,var(--gold),var(--coral),var(--moon));-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 30px rgba(255,143,171,.6))}
 
 /* ===== 3D куб ===== */
-.cubesec{position:relative;height:280svh;z-index:2}
+.cubesec{position:relative;height:360svh;z-index:2}
 .cube-st{position:sticky;top:0;height:100svh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:60px;perspective:900px;overflow:hidden}
 .cube{position:relative;width:190px;height:190px;transform-style:preserve-3d;will-change:transform}
 .cube .f{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;text-align:center;border-radius:18px;padding:12px;
@@ -325,7 +325,7 @@ svg.sign.draw text:nth-of-type(2){animation-delay:.8s,3.2s}
 
 
 /* ===== көлденең галерея ===== */
-.hscroll{position:relative;height:420svh;z-index:2}
+.hscroll{position:relative;height:480svh;z-index:2}
 .hs-st{position:sticky;top:0;height:100svh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;gap:28px;perspective:900px}
 .hs-track{display:flex;gap:26px;padding:0 14vw;width:max-content;transform-style:preserve-3d;will-change:transform}
 .hcard{flex:0 0 72vw;max-width:320px;height:56svh;max-height:440px;border-radius:26px;padding:24px;display:flex;flex-direction:column;justify-content:flex-end;gap:10px;position:relative;overflow:hidden;
@@ -336,7 +336,7 @@ svg.sign.draw text:nth-of-type(2){animation-delay:.8s,3.2s}
 .hcard h4{font-family:var(--serif);font-style:italic;font-weight:700;font-size:40px}
 .hcard p{font-size:13px;line-height:1.6;opacity:.9}
 /* ===== спираль ===== */
-.helix{position:relative;height:280svh;z-index:2}
+.helix{position:relative;height:360svh;z-index:2}
 .hx-st{position:sticky;top:0;height:100svh;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;perspective:700px}
 .hx{position:relative;width:100%;height:72svh;transform-style:preserve-3d}
 .hx .hxd,.hx .hxw{position:absolute;left:50%;top:50%;will-change:transform,opacity}
@@ -344,7 +344,7 @@ svg.sign.draw text:nth-of-type(2){animation-delay:.8s,3.2s}
 .hx .hxw{font-family:var(--serif);font-style:italic;font-weight:700;font-size:26px;white-space:nowrap;text-shadow:0 0 14px currentColor}
 .hx-name{position:absolute;left:50%;top:55%;font-family:var(--serif);font-style:italic;font-weight:700;font-size:44px;white-space:nowrap;color:var(--pearl);text-shadow:0 0 30px var(--coral);pointer-events:none}
 /* ===== кітап ===== */
-.book{position:relative;height:340svh;z-index:2}
+.book{position:relative;height:440svh;z-index:2}
 .bk-st{position:sticky;top:0;height:100svh;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:40px;perspective:1300px}
 .bk{position:relative;width:min(44vw,190px);height:calc(min(44vw,190px)*1.45);margin-left:min(44vw,190px);transform-style:preserve-3d;transform:rotateX(14deg)}
 .pg{position:absolute;inset:0;transform-origin:left center;transform-style:preserve-3d;will-change:transform}
@@ -364,6 +364,52 @@ svg.sign.draw text:nth-of-type(2){animation-delay:.8s,3.2s}
 .cnt b{display:block;font-family:var(--serif);font-style:italic;font-weight:700;font-size:clamp(26px,8.5vw,40px);line-height:1.15;
   background:linear-gradient(100deg,var(--gold),var(--coral),var(--moon));-webkit-background-clip:text;background-clip:text;color:transparent}
 .cnt span{font-size:10px;letter-spacing:.2em;text-transform:uppercase;opacity:.8}
+
+
+/* ===== аспаннан құлау ===== */
+.fall{position:relative;height:640svh;z-index:2}
+.fall-st{position:sticky;top:0;height:100svh;overflow:hidden}
+.fall-st.shake{animation:fshake .5s cubic-bezier(.3,.1,.3,1)}
+@keyframes fshake{10%,50%,90%{transform:translate(-6px,4px)}30%,70%{transform:translate(6px,-4px)}}
+.fall-sky{position:absolute;inset:0;pointer-events:none}
+.fall .cl{position:absolute;left:0;top:0;border-radius:50%;pointer-events:none;will-change:transform,opacity;
+  background:radial-gradient(ellipse at 50% 50%,rgba(255,255,255,.6),rgba(230,235,255,.22) 40%,transparent 70%)}
+.fall .wd{position:absolute;left:0;top:0;width:1.5px;border-radius:2px;background:linear-gradient(transparent,rgba(255,255,255,.7));will-change:transform}
+.fall-hero{position:absolute;left:50%;top:44%;font-size:46px;color:#fff;text-shadow:0 0 20px #fff,0 0 40px var(--coral),0 0 70px var(--gold);will-change:transform}
+.fall-alt{position:absolute;left:0;right:0;top:calc(env(safe-area-inset-top) + 86px);text-align:center;display:flex;flex-direction:column;align-items:center;gap:2px}
+.fall-alt small{font-size:9px;letter-spacing:.45em;text-transform:uppercase;color:var(--moon)}
+.fall-alt b{font-weight:800;font-size:46px;letter-spacing:-.02em;font-variant-numeric:tabular-nums;text-shadow:0 0 20px rgba(155,231,255,.6)}
+.fall-msg{position:absolute;left:16px;right:16px;top:63%;text-align:center;font-family:var(--serif);font-style:italic;font-weight:700;font-size:clamp(24px,7vw,38px);line-height:1.2;
+  transition:opacity .5s,transform .6s cubic-bezier(.2,1.4,.4,1),filter .5s}
+.fall-msg.out{opacity:0;transform:translateY(30px) scale(.9);filter:blur(8px)}
+.fall-sea{position:absolute;left:0;bottom:0;width:100%;height:38svh;will-change:transform}
+.fall-sea .sw1{animation:seaMove 4s linear infinite}.fall-sea .sw2{animation:seaMove 6s linear infinite reverse}
+@keyframes seaMove{to{transform:translateX(-200px)}}
+/* ===== сөздің ішіне ұшу ===== */
+.zoom{position:relative;height:340svh;z-index:2}
+.zoom-st{position:sticky;top:0;height:100svh;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.zoom-w{font-weight:800;font-size:26vw;line-height:1;white-space:nowrap;will-change:transform,opacity;
+  background:linear-gradient(100deg,var(--gold),var(--coral) 45%,var(--moon));-webkit-background-clip:text;background-clip:text;color:transparent}
+.zoom-flash{position:absolute;inset:0;pointer-events:none;background:radial-gradient(circle,rgba(255,240,220,.9),rgba(255,143,171,.3) 40%,transparent 70%);opacity:0}
+.zoom-in{position:absolute;left:16px;right:16px;text-align:center;font-family:var(--serif);font-style:italic;font-weight:700;font-size:clamp(30px,9vw,60px);line-height:1.15;opacity:0;will-change:transform,opacity}
+/* ===== шымылдық ===== */
+.curtain{position:relative;height:360svh;z-index:2}
+.cu-st{position:sticky;top:0;height:100svh;overflow:hidden}
+.cu-stage{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:radial-gradient(ellipse at 50% 100%,rgba(255,180,90,.18),transparent 60%)}
+.spot{position:absolute;top:-10%;width:60vw;height:120%;transform-origin:50% 0;opacity:0;pointer-events:none;
+  background:linear-gradient(rgba(255,245,210,.45),rgba(255,245,210,0) 85%);clip-path:polygon(45% 0,55% 0,100% 100%,0 100%);filter:blur(6px)}
+.spot.s1{left:-10vw;animation:spotA 4s ease-in-out infinite alternate}.spot.s2{right:-10vw;animation:spotB 4.5s ease-in-out infinite alternate}
+@keyframes spotA{from{transform:rotate(-28deg)}to{transform:rotate(8deg)}}
+@keyframes spotB{from{transform:rotate(28deg)}to{transform:rotate(-8deg)}}
+.cu-title{position:relative;text-align:center;font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(26px,7vw,40px);line-height:1.1;opacity:0;will-change:transform,opacity}
+.cu-title b{display:block;font-weight:700;font-size:clamp(54px,16vw,110px);background:linear-gradient(100deg,var(--gold),var(--coral),var(--moon));-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 24px rgba(255,143,171,.6))}
+.cu-l,.cu-r{position:absolute;top:0;bottom:0;width:51%;will-change:transform;
+  background:repeating-linear-gradient(90deg,#5b0a1e 0 18px,#8c1430 30px,#b51e3e 40px,#8c1430 50px,#5b0a1e 64px);box-shadow:inset 0 -60px 80px rgba(0,0,0,.5)}
+.cu-l{left:0;transform-origin:0 50%}.cu-r{right:0;transform-origin:100% 50%}
+.cu-l::after,.cu-r::after{content:"";position:absolute;left:0;right:0;bottom:0;height:16px;background:repeating-linear-gradient(90deg,#f5d08a 0 6px,#c79a3f 6px 12px)}
+.cu-top{position:absolute;left:-5%;right:-5%;top:0;height:13svh;border-radius:0 0 50% 50%/0 0 40% 40%;
+  background:repeating-linear-gradient(90deg,#6d0f25 0 22px,#a01a37 34px,#6d0f25 46px);box-shadow:0 10px 30px rgba(0,0,0,.6);z-index:2}
+.cu-top::after{content:"";position:absolute;left:0;right:0;bottom:6px;height:10px;background:repeating-linear-gradient(90deg,#f5d08a 0 8px,transparent 8px 16px)}
 
 /* ===== түнгі аспан ===== */
 .moon{position:fixed;top:calc(env(safe-area-inset-top) + 18px);left:18px;width:56px;height:56px;border-radius:50%;z-index:0;pointer-events:none;
@@ -459,6 +505,20 @@ svg.sign.draw text:nth-of-type(2){animation-delay:.8s,3.2s}
     <div class="swipe"><b></b>төмен</div>
   </section>
 
+  <section class="fall" id="fall"><div class="fall-st" id="fallSt">
+    <div class="fall-sky" id="fallSky"></div>
+    <div id="fallLayer"></div>
+    <div class="fall-hero" id="fallHero">✦</div>
+    <div class="fall-alt"><small>биіктік</small><b id="fallAlt">10 000</b><small>метр</small></div>
+    <div class="fall-msg" id="fallMsg"></div>
+    <svg class="fall-sea" id="fallSea" viewBox="0 0 400 200" preserveAspectRatio="none">
+      <defs><linearGradient id="seaG" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9be7ff" stop-opacity=".9"/><stop offset=".35" stop-color="#2a6bd8" stop-opacity=".85"/><stop offset="1" stop-color="#04060f"/></linearGradient></defs>
+      <g class="sw2"><path d="M0 50 Q50 25 100 50 T200 50 T300 50 T400 50 T500 50 T600 50 V200 H0Z" fill="#9be7ff" fill-opacity=".35"/></g>
+      <g class="sw1"><path d="M0 70 Q50 40 100 70 T200 70 T300 70 T400 70 T500 70 T600 70 V200 H0Z" fill="url(#seaG)"/>
+        <path d="M0 70 Q50 40 100 70 T200 70 T300 70 T400 70 T500 70 T600 70" fill="none" stroke="#fff" stroke-width="2.5" stroke-opacity=".9"/></g>
+    </svg>
+  </div></section>
+
   <div class="bands">
     <div class="band b1"><div id="band1"></div></div>
     <div class="band b2"><div id="band2"></div></div>
@@ -468,6 +528,9 @@ svg.sign.draw text:nth-of-type(2){animation-delay:.8s,3.2s}
 
   <!-- 3D туннель -->
   <section class="tunnel" id="tunnel"><div class="tun-in" id="tunIn"><div class="tun-hint">төмен сырғыт — ұшып кір ✦</div></div></section>
+
+  <!-- сөздің ішіне ұшу -->
+  <section class="zoom" id="zoom"><div class="zoom-st"><div class="zoom-flash" id="zoomFlash"></div><div class="zoom-w" id="zoomW">БАҚЫТ</div><div class="zoom-in" id="zoomIn">Сен — бақыттың<br>өзісің ✦</div></div></section>
 
   <!-- сыйлық -->
   <section class="sec">
@@ -591,6 +654,12 @@ svg.sign.draw text:nth-of-type(2){animation-delay:.8s,3.2s}
       <div class="cnt"><b data-to="999" data-inf>0</b><span>махаббат</span></div>
     </div>
   </section>
+
+  <!-- шымылдық -->
+  <section class="curtain" id="curtain"><div class="cu-st">
+    <div class="cu-stage"><div class="spot s1"></div><div class="spot s2"></div><div class="cu-title" id="cuTitle">Сахнада —<b>Ақтолқын!</b></div></div>
+    <div class="cu-l" id="cuL"></div><div class="cu-r" id="cuR"></div><div class="cu-top"></div>
+  </div></section>
 
   <!-- финал -->
   <section class="sec final" id="final">
@@ -1019,15 +1088,15 @@ const secs=[...document.querySelectorAll('.sec')],heroTopEl=document.querySelect
 let sLastY=scrollY,sVel=0;
 (function scrollFx(){const y=scrollY,ih=innerHeight;sVel+=((y-sLastY)-sVel)*.25;sLastY=y;
   const sk=Math.max(-5,Math.min(5,sVel*.1));
-  for(const s of secs){const r=s.getBoundingClientRect();if(r.bottom<-80||r.top>ih+80)continue;
+  for(const s of secs){const r=vr(s);if(r.bottom<-80||r.top>ih+80)continue;
     const a=Math.max(-1,Math.min(1,(r.top+Math.min(r.height,ih)/2-ih/2)/ih));
     s.style.transform=`perspective(1000px) rotateX(${(-a*12).toFixed(2)}deg) scale(${(1-Math.abs(a)*.1).toFixed(3)}) skewY(${sk.toFixed(2)}deg)`;
     s.style.opacity=(1-Math.max(0,Math.abs(a)-.3)*1.2).toFixed(3)}
   if(y<ih*1.2){const k=y/ih;heroTopEl.style.translate=`0 ${(-y*.55).toFixed(1)}px`;heroTopEl.style.opacity=Math.max(0,1-k*1.5);
     hc.style.transform=`translateY(${(y*.35).toFixed(1)}px) scale(${(1+k*.3).toFixed(3)})`;hc.style.opacity=Math.max(0,1-k*1.1);
     heroBotEl.style.translate=`0 ${(-y*.25).toFixed(1)}px`;swipeEl.style.translate=`-50% ${(y*.6).toFixed(1)}px`}
-  const br=bandsEl.getBoundingClientRect();if(br.bottom>0&&br.top<ih)bandsEl.style.setProperty('--sx',Math.max(-110,Math.min(110,(br.top-ih/2)*.35)).toFixed(1)+'px');
-  if(litH){const lr=document.getElementById('lit').getBoundingClientRect();const lp=Math.min(1,Math.max(0,-lr.top/(lr.height-ih)));
+  const br=vr(bandsEl);if(br.bottom>0&&br.top<ih)bandsEl.style.setProperty('--sx',Math.max(-110,Math.min(110,(br.top-ih/2)*.35)).toFixed(1)+'px');
+  if(litH){const lr=vr(lit);const lp=Math.min(1,Math.max(0,-lr.top/(lr.height-ih)));
     litH.style.transform=`scale(${(.9+lp*.15).toFixed(3)}) rotate(${((lp-.5)*-4).toFixed(2)}deg)`}
   requestAnimationFrame(scrollFx)})();
 
@@ -1036,7 +1105,7 @@ const BIG=[['СЫЙЛЫҚ','ҚУАНЫШ'],['ТІЛЕК','АРМАН'],['ОЙЫ�
 const fxSecs=secs.map((s,i)=>{const w=BIG[i]||['АҚТОЛҚЫН','✦'];s.insertAdjacentHTML('afterbegin',`<div class="bigword">${w[0]}</div><div class="bigword b2">${w[1]}</div>`);
   return{s,b1:s.children[0],b2:s.children[1],lab:s.querySelector('.label'),h:s.querySelector('.h'),tip:s.querySelector('.tip'),ls:[...s.querySelectorAll('.h .l')]}});
 const ringEl=document.getElementById('ring'),ringFg=document.getElementById('ringFg'),pct=document.getElementById('pct');
-ringEl.addEventListener('click',()=>{buzz(15);const nx=secs.find(s=>s.getBoundingClientRect().top>innerHeight*.15);
+ringEl.addEventListener('click',()=>{buzz(15);const nx=[...document.querySelectorAll('main > section')].find(s=>s.getBoundingClientRect().top>innerHeight*.15);
   if(nx)scrollTo({top:scrollY+nx.getBoundingClientRect().top-20,behavior:'smooth'});else scrollTo({top:0,behavior:'smooth'})});
 let fxPrevSec=-1;
 (function scrollFx2(){const y=scrollY,ih=innerHeight,max=document.documentElement.scrollHeight-ih,pr=Math.min(1,y/max);
@@ -1046,7 +1115,7 @@ let fxPrevSec=-1;
   if(Math.abs(sVel)>7){for(let i=0;i<Math.min(4,Math.abs(sVel)/8);i++)spark(rnd(0,W),sVel>0?H+5:-5,pick(PAL),{vx:0,vy:-Math.max(-35,Math.min(35,sVel))*rnd(.6,1.2),g:0,f:.97,life:28,size:rnd(.8,1.6)})}
   // карусель мен әлем скролмен айналады
   ang+=sVel*.25;gay+=sVel*.004;
-  fxSecs.forEach((o,idx)=>{const r=o.s.getBoundingClientRect();if(r.bottom<-80||r.top>ih+80)return;
+  fxSecs.forEach((o,idx)=>{const r=vr(o.s);if(r.bottom<-80||r.top>ih+80)return;
     const a=Math.max(-1,Math.min(1,(r.top+Math.min(r.height,ih)/2-ih/2)/ih)),aa=Math.abs(a);
     o.b1.style.translate=`${(-a*55-25).toFixed(1)}vw -50%`;o.b2.style.translate=`${(a*45-20).toFixed(1)}vw -50%`;
     if(o.lab)o.lab.style.translate=`0 ${(a*90).toFixed(1)}px`,o.lab.style.letterSpacing=(.5+aa*1.2).toFixed(2)+'em';
@@ -1074,7 +1143,7 @@ const CENTER_SEL='.gift-wrap,.cake,.sky,.const,.flip,.scratch,.globe,.env,.hold'
 fxSecs.forEach(o=>o.c=o.s.querySelector(CENTER_SEL));
 (function fx3d(t){const ih=innerHeight;
   // туннель
-  const tr=tun.getBoundingClientRect();
+  const tr=vr(tun);
   if(tr.bottom>0&&tr.top<ih){const p=Math.min(1,Math.max(0,-tr.top/(tr.height-ih))),cam=p*TEND;
     for(const it of tItems){const z=it.z+cam;if(z>600||z<-4200){it.el.style.opacity=0;continue}
       const fade=z>0?Math.max(0,1-z/500):Math.min(1,(4200+z)/1500);
@@ -1083,12 +1152,12 @@ fxSecs.forEach(o=>o.c=o.s.querySelector(CENTER_SEL));
     const fz=-TEND-400+cam+400;tFin.style.transform=`translate(-50%,-50%) translate3d(0,0,${Math.min(0,fz-0)}px) scale(${(.4+p*.6).toFixed(3)})`;tFin.style.opacity=Math.max(0,(p-.75)*4).toFixed(3);
     if(p>.97&&tunPrev<=.97){burst(W/2,H/2,160,'heart');buzz([30,40,60]);sChime()}tunPrev=p}
   // куб
-  const cr=cubeSec.getBoundingClientRect();
+  const cr=vr(cubeSec);
   if(cr.bottom>0&&cr.top<ih){const p=Math.min(1,Math.max(0,-cr.top/(cr.height-ih)));
     cube.style.transform=`translateZ(${(Math.sin(p*Math.PI)*80).toFixed(1)}px) rotateX(${(p*540+tiltY*20).toFixed(1)}deg) rotateY(${(p*720+t/40+tiltX*30).toFixed(1)}deg) rotateZ(${(Math.sin(p*6)*20).toFixed(1)}deg)`;
     cubeSh.style.transform=`scale(${(1+Math.sin(p*Math.PI)*.4).toFixed(3)})`}
   // әр бөлімнің ортасындағы зат 3D айналады
-  for(const o of fxSecs){if(!o.c)continue;const r=o.s.getBoundingClientRect();if(r.bottom<-80||r.top>ih+80)continue;
+  for(const o of fxSecs){if(!o.c)continue;const r=vr(o.s);if(r.bottom<-80||r.top>ih+80)continue;
     const a=Math.max(-1,Math.min(1,(r.top+Math.min(r.height,ih)/2-ih/2)/ih));
     o.c.style.rotate=`${(a*.3).toFixed(3)} 1 0 ${(a*45).toFixed(1)}deg`;o.c.style.translate=`0 0 ${(-Math.abs(a)*260).toFixed(0)}px`}
   requestAnimationFrame(fx3d)})(0);
@@ -1118,21 +1187,77 @@ new IntersectionObserver(([e])=>{if(!e.isIntersecting||cntDone)return;cntDone=tr
     (function step(){const q=Math.min(1,Math.max(0,(performance.now()-t0)/2200)),e2=1-Math.pow(1-q,4);el.textContent=Math.round(to*e2).toLocaleString('ru-RU');
       if(q<1)requestAnimationFrame(step);else{if(inf)el.textContent='∞';const r=el.getBoundingClientRect();burst(r.left+r.width/2,r.top+r.height/2,50);buzz(15)}})()})},{threshold:.4}).observe(cntsEl);
 /* ================= Ортақ цикл ================= */
-(function fxMore(t){const ih=innerHeight,iw=innerWidth;let r=hsSec.getBoundingClientRect();
-  if(r.bottom>0&&r.top<ih){const p=Math.min(1,Math.max(0,-r.top/(r.height-ih))),maxX=hsTrack.scrollWidth-iw;hsTrack.style.transform=`translateX(${(-p*maxX).toFixed(1)}px)`;
-    for(const c of hcards){const cr=c.getBoundingClientRect(),d=Math.max(-1.5,Math.min(1.5,(cr.left+cr.width/2-iw/2)/iw));
+(function fxMore(t){const ih=innerHeight,iw=innerWidth;let r=vr(hsSec);
+  if(r.bottom>0&&r.top<ih){const p=Math.min(1,Math.max(0,-r.top/(r.height-ih))),maxX=hsMaxX;hsTrack.style.transform=`translateX(${(-p*maxX).toFixed(1)}px)`;
+    for(const c of hcards){const d=Math.max(-1.5,Math.min(1.5,(c.offsetLeft-p*maxX+c.offsetWidth/2-iw/2)/iw));
       c.style.transform=`rotateY(${(-d*38).toFixed(1)}deg) translateZ(${(-Math.abs(d)*140).toFixed(0)}px) scale(${(1-Math.abs(d)*.08).toFixed(3)})`;c.style.opacity=(1-Math.max(0,Math.abs(d)-.6)).toFixed(2);
       c.children[1].style.transform=`translateX(${(d*60).toFixed(1)}px) rotate(${(d*90).toFixed(0)}deg)`}}
-  r=hxSec.getBoundingClientRect();
+  r=vr(hxSec);
   if(r.bottom>0&&r.top<ih){const p=Math.min(1,Math.max(0,-r.top/(r.height-ih))),rot=p*Math.PI*4+t*.0004,R=Math.min(iw*.33,150),HH_=hxEl.clientHeight;
     for(const it of hxItems){const a=it.i*.42+rot+(it.strand?Math.PI:0),y=(it.i/44-.5)*HH_*.95,x=Math.cos(a)*R,z=Math.sin(a)*R,k=(z/R+1)/2;
       it.el.style.transform=`translate(-50%,-50%) translate3d(${x.toFixed(1)}px,${y.toFixed(1)}px,${z.toFixed(1)}px) scale(${(.6+k*.7).toFixed(2)})`;it.el.style.opacity=(.25+k*.75).toFixed(2)}
     hxName.style.transform=`translate(-50%,-50%) scale(${(.6+p*.8).toFixed(3)}) rotateY(${(Math.sin(p*Math.PI*3)*35).toFixed(1)}deg)`}
-  r=bkSec.getBoundingClientRect();
+  r=vr(bkSec);
   if(r.bottom>0&&r.top<ih){const p=Math.min(1,Math.max(0,-r.top/(r.height-ih)))*(NP+.2);
     pgs.forEach((pg,i)=>{const f=Math.min(1,Math.max(0,p-i)),e3=f<.5?2*f*f:1-Math.pow(-2*f+2,2)/2;pg.style.transform=`rotateY(${(-e3*180).toFixed(1)}deg)`;pg.style.zIndex=f>.5?i:NP-i});
     const n=Math.floor(p);if(n!==pgPrev){pgPrev=n;buzz(12);if(AC&&soundOn)bell(hz(['E6','G6','A6','C7','D7','E7'][n%6]),AC.currentTime,.05,.9)}}
   requestAnimationFrame(fxMore)})(0);
+
+/* ================= Аспаннан құлау ================= */
+const flSec=document.getElementById('fall'),flSt=document.getElementById('fallSt'),flLayer=document.getElementById('fallLayer'),flHero=document.getElementById('fallHero'),
+  flAlt=document.getElementById('fallAlt'),flMsg=document.getElementById('fallMsg'),flSea=document.getElementById('fallSea'),flSky=document.getElementById('fallSky');
+const flObjs=[];
+for(let i=0;i<26;i++){const d=rnd(.4,2.4),el=document.createElement('div');el.className='cl';const w=rnd(140,320)*d;el.style.width=w+'px';el.style.height=w*.45+'px';
+  if(d<.8)el.style.filter='blur(3px)';flLayer.appendChild(el);flObjs.push({el,d,x:rnd(-.4,1),y0:rnd(0,1),w,kind:'c',band:rnd(.12,.85)})}
+for(let i=0;i<24;i++){const d=rnd(1.5,4),el=document.createElement('div');el.className='wd';el.style.height=rnd(40,140)*d/2+'px';flLayer.appendChild(el);flObjs.push({el,d,x:rnd(0,1),y0:rnd(0,1),kind:'w'})}
+const FLM=[[0,'Ақтолқын, саған аспаннан құттықтау ұшып келеді ✦'],[.2,'Жұлдыздардың арасынан…'],[.38,'Бұлттарды жарып өтеміз!'],[.58,'Бақыт жақындап қалды'],[.78,'Ақ толқындар көрінді!'],[.95,'Шолп! Қош келдің 🌊']];
+let flIdx=-1,flPrevP=0,flSplashed=false;
+function flSetMsg(i){flIdx=i;flMsg.classList.add('out');setTimeout(()=>{flMsg.textContent=FLM[i][1];flMsg.classList.remove('out')},300)}
+/* ================= Сөздің ішіне ұшу ================= */
+const zmSec=document.getElementById('zoom'),zmW=document.getElementById('zoomW'),zmIn=document.getElementById('zoomIn'),zmFlash=document.getElementById('zoomFlash');let zmPrev=0;
+/* ================= Шымылдық ================= */
+const cuSec=document.getElementById('curtain'),cuL=document.getElementById('cuL'),cuR=document.getElementById('cuR'),cuTitle=document.getElementById('cuTitle'),cuSpots=[...cuSec.querySelectorAll('.spot')];let cuPrev=0;
+function sClap(){if(!AC||!soundOn)return;for(let i=0;i<46;i++)setTimeout(()=>noise(.05,rnd(1100,2600),'bandpass',.55),rnd(0,2000))}
+const prog=(el,ih)=>{const r=vr(el);if(r.bottom<=0||r.top>=ih)return -1;return Math.min(1,Math.max(0,-r.top/(r.height-ih)))};
+(function fxFall(t){const ih=innerHeight,iw=innerWidth;
+  let p=prog(flSec,ih);
+  if(p>=0){const T=ih*5.5,cloudAmt=Math.max(0,Math.sin(Math.min(1,Math.max(0,(p-.12)/.66))*Math.PI));
+    for(const o of flObjs){const span=ih+600;let y=((o.y0*span-p*T*o.d)%span+span)%span-300;
+      if(o.kind==='c'){o.el.style.transform=`translate3d(${(o.x*iw).toFixed(0)}px,${y.toFixed(0)}px,0)`;o.el.style.opacity=(cloudAmt*Math.min(1,o.d*.5)).toFixed(2)}
+      else{o.el.style.transform=`translate3d(${(o.x*iw).toFixed(0)}px,${y.toFixed(0)}px,0)`;o.el.style.opacity=(.25+Math.min(.6,Math.abs(sVel)/40)).toFixed(2)}}
+    const alt=Math.max(0,Math.round((1-Math.min(1,p/.95))*10000));flAlt.textContent=alt.toLocaleString('ru-RU');
+    const seaP=Math.min(1,Math.max(0,(p-.68)/.27));flSea.style.transform=`translateY(${((1-seaP)*100).toFixed(1)}%)`;
+    flSky.style.background=`radial-gradient(ellipse at 50% 120%,rgba(155,231,255,${(seaP*.35).toFixed(2)}),transparent 60%),linear-gradient(rgba(4,6,15,${(.35-p*.3).toFixed(2)}),transparent)`;
+    const wob=Math.sin(t/300)*18+tiltX*40,dive=p>.93?(p-.93)/.07:0;
+    flHero.style.transform=`translate(-50%,-50%) translate(${wob.toFixed(1)}px,${(dive*ih*.35).toFixed(0)}px) rotate(${(t/8%360).toFixed(0)}deg) scale(${(1+Math.min(1,Math.abs(sVel)/30)*.6-dive*.7).toFixed(2)})`;
+    flHero.style.opacity=(1-Math.max(0,dive-.6)*2.5).toFixed(2);
+    if(p>.01&&p<.95&&Math.random()<.7){spark(iw/2+wob,ih*.44+dive*ih*.35,pick(PAL),{vx:rnd(-.6,.6),vy:-rnd(2,6),g:-.02,life:rnd(30,50),size:rnd(1.2,2.4)})}
+    let mi=0;for(let i=0;i<FLM.length;i++)if(p>=FLM[i][0])mi=i;if(mi!==flIdx)flSetMsg(mi);
+    if(p>=.95&&!flSplashed){flSplashed=true;flSt.classList.remove('shake');void flSt.offsetWidth;flSt.classList.add('shake');buzz([60,40,120]);noise(.9,700,'lowpass',.7);
+      for(let k=0;k<70;k++)spark(iw/2+rnd(-40,40),ih*.8,pick(['#ffffff','#9be7ff','#7cf5d0']),{vx:rnd(-6,6),vy:-rnd(5,14),g:.3,f:.99,life:rnd(50,90),size:rnd(2,4)});confetti(iw/2,ih*.75,120)}
+    if(p<.9)flSplashed=false;flPrevP=p}
+  // сөздің ішіне ұшу
+  p=prog(zmSec,ih);
+  if(p>=0){const z=Math.pow(p,3)*70+1;zmW.style.transform=`scale(${z.toFixed(2)}) rotate(${(p*25).toFixed(1)}deg)`;zmW.style.opacity=(p<.55?1:Math.max(0,1-(p-.55)/.12)).toFixed(2);
+    zmFlash.style.opacity=Math.max(0,1-Math.abs(p-.62)/.08).toFixed(2);
+    const ip=Math.min(1,Math.max(0,(p-.6)/.25));zmIn.style.opacity=ip.toFixed(2);zmIn.style.transform=`scale(${(.5+ip*.5).toFixed(3)}) translateY(${((1-ip)*40).toFixed(0)}px)`;zmIn.style.letterSpacing=((1-ip)*.3).toFixed(2)+'em';
+    if(p>.62&&zmPrev<=.62){buzz(30);sChime();burst(iw/2,ih/2,140,'star')}zmPrev=p}
+  // шымылдық
+  p=prog(cuSec,ih);
+  if(p>=0){const o=Math.min(1,Math.max(0,(p-.08)/.5)),e=1-Math.pow(1-o,3);
+    cuL.style.transform=`translateX(${(-e*92).toFixed(1)}%) scaleX(${(1-e*.55).toFixed(3)}) skewY(${(e*-4).toFixed(1)}deg)`;
+    cuR.style.transform=`translateX(${(e*92).toFixed(1)}%) scaleX(${(1-e*.55).toFixed(3)}) skewY(${(e*4).toFixed(1)}deg)`;
+    const tp=Math.min(1,Math.max(0,(p-.35)/.3));cuTitle.style.opacity=tp.toFixed(2);cuTitle.style.transform=`scale(${(.4+tp*.6).toFixed(3)}) translateY(${((1-tp)*60).toFixed(0)}px)`;
+    cuSpots.forEach(sp=>sp.style.opacity=(o*.9).toFixed(2));
+    if(p>.6&&cuPrev<=.6){sClap();buzz([30,30,30,30,60]);for(let k=0;k<6;k++)setTimeout(()=>launch(),k*200);confetti(iw/2,ih*.3,200)}cuPrev=p}
+  requestAnimationFrame(fxFall)})(0);
+
+/* ================= Орындарды алдын ала есептеу (телефонда тез жұмыс үшін) ================= */
+var geo=null,hsMaxX=0;
+function measure(){const m=new Map();for(const el of document.querySelectorAll('main > section,main .sec,.bands')){let t=0,e=el;while(e){t+=e.offsetTop;e=e.offsetParent}m.set(el,[t,el.offsetHeight])}
+  geo=m;hsMaxX=hsTrack.scrollWidth-innerWidth}
+function vr(el){const g=geo&&geo.get(el);if(!g)return el.getBoundingClientRect();const top=g[0]-scrollY;return{top,bottom:top+g[1],height:g[1]}}
+measure();addEventListener('resize',()=>setTimeout(measure,100));setInterval(measure,1500);document.fonts.ready.then(measure);
 </script>
 </body>
 </html>
