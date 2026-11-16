@@ -323,6 +323,48 @@ svg.sign.draw text:nth-of-type(2){animation-delay:.8s,3.2s}
 .lit h2 span.on{transform:none;opacity:1}
 .lit h2 span{transition:color .3s,text-shadow .3s,transform .7s cubic-bezier(.2,1.5,.4,1),opacity .5s}
 
+
+/* ===== көлденең галерея ===== */
+.hscroll{position:relative;height:420svh;z-index:2}
+.hs-st{position:sticky;top:0;height:100svh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;gap:28px;perspective:900px}
+.hs-track{display:flex;gap:26px;padding:0 14vw;width:max-content;transform-style:preserve-3d;will-change:transform}
+.hcard{flex:0 0 72vw;max-width:320px;height:56svh;max-height:440px;border-radius:26px;padding:24px;display:flex;flex-direction:column;justify-content:flex-end;gap:10px;position:relative;overflow:hidden;
+  border:1px solid rgba(255,255,255,.3);box-shadow:0 30px 60px rgba(0,0,0,.4);will-change:transform}
+.hcard::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,transparent 30%,rgba(255,255,255,.3) 48%,transparent 60%);transform:translateX(-120%);animation:glare 4s ease-in-out infinite}
+.hcard .hn{position:absolute;top:18px;left:22px;font-weight:800;font-size:64px;color:transparent;-webkit-text-stroke:1.2px rgba(255,255,255,.7)}
+.hcard .hsym{position:absolute;top:28%;right:22px;font-size:90px;line-height:1;color:rgba(255,255,255,.9);text-shadow:0 0 30px #fff}
+.hcard h4{font-family:var(--serif);font-style:italic;font-weight:700;font-size:40px}
+.hcard p{font-size:13px;line-height:1.6;opacity:.9}
+/* ===== спираль ===== */
+.helix{position:relative;height:280svh;z-index:2}
+.hx-st{position:sticky;top:0;height:100svh;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;perspective:700px}
+.hx{position:relative;width:100%;height:72svh;transform-style:preserve-3d}
+.hx .hxd,.hx .hxw{position:absolute;left:50%;top:50%;will-change:transform,opacity}
+.hx .hxd{width:10px;height:10px;border-radius:50%;background:currentColor;box-shadow:0 0 14px currentColor,0 0 4px #fff}
+.hx .hxw{font-family:var(--serif);font-style:italic;font-weight:700;font-size:26px;white-space:nowrap;text-shadow:0 0 14px currentColor}
+.hx-name{position:absolute;left:50%;top:55%;font-family:var(--serif);font-style:italic;font-weight:700;font-size:44px;white-space:nowrap;color:var(--pearl);text-shadow:0 0 30px var(--coral);pointer-events:none}
+/* ===== кітап ===== */
+.book{position:relative;height:340svh;z-index:2}
+.bk-st{position:sticky;top:0;height:100svh;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:40px;perspective:1300px}
+.bk{position:relative;width:min(44vw,190px);height:calc(min(44vw,190px)*1.45);margin-left:min(44vw,190px);transform-style:preserve-3d;transform:rotateX(14deg)}
+.pg{position:absolute;inset:0;transform-origin:left center;transform-style:preserve-3d;will-change:transform}
+.pf{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:4px 14px 14px 4px;padding:18px 14px;display:flex;flex-direction:column;justify-content:center;gap:10px;text-align:center;
+  background:linear-gradient(90deg,#e9dcc6,#fffaf0 12%,#fff6e6);color:#3a2440;box-shadow:inset 6px 0 12px rgba(0,0,0,.12),0 10px 30px rgba(0,0,0,.35)}
+.pf.pfb{transform:rotateY(180deg);border-radius:14px 4px 4px 14px;background:linear-gradient(270deg,#e9dcc6,#fffaf0 12%,#fff6e6)}
+.pf small{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:#b06a8a}
+.pf span{font-family:var(--serif);font-style:italic;font-weight:700;font-size:21px;line-height:1.25}
+.pg:first-child .pff{background:linear-gradient(135deg,#3b2bff,#ff4f8b);color:#fff}
+.pg:first-child .pff small{color:#ffe7a8}
+/* ===== сандар ===== */
+.cnts{display:grid;grid-template-columns:1fr 1fr;gap:14px;width:min(92vw,420px);perspective:800px}
+.cnt{border-radius:20px;padding:22px 8px;text-align:center;background:linear-gradient(160deg,rgba(255,255,255,.14),rgba(255,255,255,.03));border:1px solid rgba(255,255,255,.22);
+  transform:rotateY(100deg) translateZ(-80px);opacity:0;transition:transform 1.1s cubic-bezier(.2,1.4,.4,1),opacity .8s}
+.cnts.on .cnt{transform:none;opacity:1}
+.cnts.on .cnt:nth-child(2){transition-delay:.15s}.cnts.on .cnt:nth-child(3){transition-delay:.3s}.cnts.on .cnt:nth-child(4){transition-delay:.45s}
+.cnt b{display:block;font-family:var(--serif);font-style:italic;font-weight:700;font-size:clamp(26px,8.5vw,40px);line-height:1.15;
+  background:linear-gradient(100deg,var(--gold),var(--coral),var(--moon));-webkit-background-clip:text;background-clip:text;color:transparent}
+.cnt span{font-size:10px;letter-spacing:.2em;text-transform:uppercase;opacity:.8}
+
 /* ===== түнгі аспан ===== */
 .moon{position:fixed;top:calc(env(safe-area-inset-top) + 18px);left:18px;width:56px;height:56px;border-radius:50%;z-index:0;pointer-events:none;
   background:radial-gradient(circle at 38% 35%,#fffdf3,#f1e9cf 55%,#cfc3a0);box-shadow:0 0 40px 10px rgba(255,248,220,.35),0 0 120px 40px rgba(155,231,255,.15);animation:moon 6s ease-in-out infinite}
@@ -452,6 +494,9 @@ svg.sign.draw text:nth-of-type(2){animation-delay:.8s,3.2s}
     <button class="pill" id="relight">қайта жағу</button>
   </section>
 
+  <!-- көлденең галерея -->
+  <section class="hscroll" id="hscroll"><div class="hs-st"><div class="label">✦ тілектер жолы ✦</div><div class="hs-track" id="hsTrack"></div><div class="tip">төмен сырғыт →</div></div></section>
+
   <!-- шарлар -->
   <section class="sec">
     <div class="label reveal">03 · ойын</div>
@@ -476,6 +521,9 @@ svg.sign.draw text:nth-of-type(2){animation-delay:.8s,3.2s}
     <div class="cube" id="cube"><div class="f">Бақыт ✦</div><div class="f">Арман ☾</div><div class="f">Махаббат ♡</div><div class="f">Шабыт ✺</div><div class="f">Күлкі ✷</div><div class="f">Ақтолқын</div></div>
     <div class="cube-shadow" id="cubeSh"></div>
   </div></section>
+
+  <!-- спираль -->
+  <section class="helix" id="helix"><div class="hx-st"><div class="label">✦ жұлдыз спиралі ✦</div><div class="hx" id="hx"></div><div class="hx-name">Ақтолқын</div></div></section>
 
   <!-- шоқжұлдыз -->
   <section class="sec">
@@ -507,6 +555,9 @@ svg.sign.draw text:nth-of-type(2){animation-delay:.8s,3.2s}
     <div class="tip">саусақпен өшір</div>
   </section>
 
+  <!-- кітап -->
+  <section class="book" id="book"><div class="bk-st"><div class="label">✦ тілектер кітабы ✦</div><div class="bk" id="bk"></div><div class="tip">сырғытсаң — бет аударылады</div></div></section>
+
   <!-- сөздер әлемі -->
   <section class="sec">
     <div class="label reveal">08 · әлем</div>
@@ -527,6 +578,18 @@ svg.sign.draw text:nth-of-type(2){animation-delay:.8s,3.2s}
       <div class="seal">♡</div>
     </div>
     <div class="tip" id="envTip">мөрді бас</div>
+  </section>
+
+  <!-- сандар -->
+  <section class="sec">
+    <div class="label reveal">10 · сандар</div>
+    <h3 class="h split">Саған арналған</h3>
+    <div class="cnts" id="cnts">
+      <div class="cnt"><b data-to="365">0</b><span>күн қуаныш</span></div>
+      <div class="cnt"><b data-to="1000000">0</b><span>күлкі</span></div>
+      <div class="cnt"><b data-to="100">0</b><span>% бақыт</span></div>
+      <div class="cnt"><b data-to="999" data-inf>0</b><span>махаббат</span></div>
+    </div>
   </section>
 
   <!-- финал -->
@@ -969,7 +1032,7 @@ let sLastY=scrollY,sVel=0;
   requestAnimationFrame(scrollFx)})();
 
 /* ================= Қосымша скролл эффектілері ================= */
-const BIG=[['СЫЙЛЫҚ','ҚУАНЫШ'],['ТІЛЕК','АРМАН'],['ОЙЫН','КҮЛКІ'],['ТІЛЕКТЕР','БАҚЫТ'],['АСПАН','ЖҰЛДЫЗ'],['СӘТТІЛІК','НҰР'],['ҚҰПИЯ','СЫР'],['ӘЛЕМ','ТОЛҚЫН'],['ХАТ','ЖҮРЕК'],['ҚҰТТЫ БОЛСЫН','АҚТОЛҚЫН']];
+const BIG=[['СЫЙЛЫҚ','ҚУАНЫШ'],['ТІЛЕК','АРМАН'],['ОЙЫН','КҮЛКІ'],['ТІЛЕКТЕР','БАҚЫТ'],['АСПАН','ЖҰЛДЫЗ'],['СӘТТІЛІК','НҰР'],['ҚҰПИЯ','СЫР'],['ӘЛЕМ','ТОЛҚЫН'],['ХАТ','ЖҮРЕК'],['САНДАР','ШЕКСІЗ'],['ҚҰТТЫ БОЛСЫН','АҚТОЛҚЫН']];
 const fxSecs=secs.map((s,i)=>{const w=BIG[i]||['АҚТОЛҚЫН','✦'];s.insertAdjacentHTML('afterbegin',`<div class="bigword">${w[0]}</div><div class="bigword b2">${w[1]}</div>`);
   return{s,b1:s.children[0],b2:s.children[1],lab:s.querySelector('.label'),h:s.querySelector('.h'),tip:s.querySelector('.tip'),ls:[...s.querySelectorAll('.h .l')]}});
 const ringEl=document.getElementById('ring'),ringFg=document.getElementById('ringFg'),pct=document.getElementById('pct');
@@ -1029,6 +1092,47 @@ fxSecs.forEach(o=>o.c=o.s.querySelector(CENTER_SEL));
     const a=Math.max(-1,Math.min(1,(r.top+Math.min(r.height,ih)/2-ih/2)/ih));
     o.c.style.rotate=`${(a*.3).toFixed(3)} 1 0 ${(a*45).toFixed(1)}deg`;o.c.style.translate=`0 0 ${(-Math.abs(a)*260).toFixed(0)}px`}
   requestAnimationFrame(fx3d)})(0);
+
+/* ================= Көлденең галерея ================= */
+const HC=[['01','✦','Бақыт','Әр таңың күлкімен басталсын','#3b2bff,#ff4f8b'],['02','☾','Арман','Ең батыл армандарың орындалсын','#00a6c7,#3b2bff'],
+  ['03','♡','Махаббат','Жүрегің әрқашан жылы болсын','#ff4f8b,#e0a84a'],['04','✺','Шабыт','Әр күнің жаңа идеяға толсын','#7c5cf0,#00a6c7'],
+  ['05','❀','Достық','Адал достар әрқашан қасыңда','#1fbf95,#3b2bff'],['06','✶','Табыс','Биік шыңдарды бағындыр','#e0a84a,#ff7a59'],['07','✷','Күлкі','Күлкің әлемді нұрландырсын','#ff6f9a,#7c5cf0']];
+const hsTrack=document.getElementById('hsTrack'),hsSec=document.getElementById('hscroll');
+hsTrack.innerHTML=HC.map(c=>`<div class="hcard" style="background:linear-gradient(150deg,${c[4]})"><div class="hn">${c[0]}</div><div class="hsym">${c[1]}</div><h4>${c[2]}</h4><p>${c[3]}</p></div>`).join('');
+const hcards=[...hsTrack.children];
+/* ================= Спираль ================= */
+const hxEl=document.getElementById('hx'),hxSec=document.getElementById('helix'),hxName=document.querySelector('.hx-name'),HXW=['Бақыт','Арман','Нұр','Күлкі','Үміт','Шабыт','Жұлдыз','Қуаныш'],hxItems=[];
+for(let i=0;i<44;i++){const el=document.createElement('div'),word=i%6===0;el.className=word?'hxw':'hxd';if(word)el.textContent=HXW[(i/6|0)%HXW.length];el.style.color=PAL[i%PAL.length];hxEl.appendChild(el);hxItems.push({el,i,strand:i%2})}
+/* ================= Кітап ================= */
+const BKT=[['Ақтолқын','✦ тілектер кітабы ✦'],['Бірінші бет','Сен — әлемдегі ең жарық толқынсың'],['Екінші бет','Әр күнің күлкіге толы болсын'],['Үшінші бет','Армандарың бір-бірлеп орындалсын'],
+  ['Төртінші бет','Жаныңда әрқашан жақсы адамдар болсын'],['Бесінші бет','Денсаулығың мықты, жүрегің жылы болсын'],['Алтыншы бет','Сен ойлағаныңнан да күштісің'],
+  ['Жетінші бет','Жаңа жасың — жаңа шыңдар'],['Сегізінші бет','Сені шексіз жақсы көреміз'],['Соңы','…бұл тек бастамасы ✦']];
+const bkEl=document.getElementById('bk'),bkSec=document.getElementById('book'),NP=5;
+for(let i=0;i<NP;i++){const pg=document.createElement('div');pg.className='pg';const f=BKT[i*2],bb=BKT[i*2+1];
+  pg.innerHTML=`<div class="pf pff"><small>${f[0]}</small><span>${f[1]}</span></div><div class="pf pfb"><small>${bb[0]}</small><span>${bb[1]}</span></div>`;bkEl.appendChild(pg)}
+const pgs=[...bkEl.children];let pgPrev=0;
+/* ================= Сандар ================= */
+const cntsEl=document.getElementById('cnts');let cntDone=false;
+new IntersectionObserver(([e])=>{if(!e.isIntersecting||cntDone)return;cntDone=true;cntsEl.classList.add('on');
+  cntsEl.querySelectorAll('b').forEach((el,k)=>{const to=+el.dataset.to,inf=el.hasAttribute('data-inf'),t0=performance.now()+400+k*250;
+    (function step(){const q=Math.min(1,Math.max(0,(performance.now()-t0)/2200)),e2=1-Math.pow(1-q,4);el.textContent=Math.round(to*e2).toLocaleString('ru-RU');
+      if(q<1)requestAnimationFrame(step);else{if(inf)el.textContent='∞';const r=el.getBoundingClientRect();burst(r.left+r.width/2,r.top+r.height/2,50);buzz(15)}})()})},{threshold:.4}).observe(cntsEl);
+/* ================= Ортақ цикл ================= */
+(function fxMore(t){const ih=innerHeight,iw=innerWidth;let r=hsSec.getBoundingClientRect();
+  if(r.bottom>0&&r.top<ih){const p=Math.min(1,Math.max(0,-r.top/(r.height-ih))),maxX=hsTrack.scrollWidth-iw;hsTrack.style.transform=`translateX(${(-p*maxX).toFixed(1)}px)`;
+    for(const c of hcards){const cr=c.getBoundingClientRect(),d=Math.max(-1.5,Math.min(1.5,(cr.left+cr.width/2-iw/2)/iw));
+      c.style.transform=`rotateY(${(-d*38).toFixed(1)}deg) translateZ(${(-Math.abs(d)*140).toFixed(0)}px) scale(${(1-Math.abs(d)*.08).toFixed(3)})`;c.style.opacity=(1-Math.max(0,Math.abs(d)-.6)).toFixed(2);
+      c.children[1].style.transform=`translateX(${(d*60).toFixed(1)}px) rotate(${(d*90).toFixed(0)}deg)`}}
+  r=hxSec.getBoundingClientRect();
+  if(r.bottom>0&&r.top<ih){const p=Math.min(1,Math.max(0,-r.top/(r.height-ih))),rot=p*Math.PI*4+t*.0004,R=Math.min(iw*.33,150),HH_=hxEl.clientHeight;
+    for(const it of hxItems){const a=it.i*.42+rot+(it.strand?Math.PI:0),y=(it.i/44-.5)*HH_*.95,x=Math.cos(a)*R,z=Math.sin(a)*R,k=(z/R+1)/2;
+      it.el.style.transform=`translate(-50%,-50%) translate3d(${x.toFixed(1)}px,${y.toFixed(1)}px,${z.toFixed(1)}px) scale(${(.6+k*.7).toFixed(2)})`;it.el.style.opacity=(.25+k*.75).toFixed(2)}
+    hxName.style.transform=`translate(-50%,-50%) scale(${(.6+p*.8).toFixed(3)}) rotateY(${(Math.sin(p*Math.PI*3)*35).toFixed(1)}deg)`}
+  r=bkSec.getBoundingClientRect();
+  if(r.bottom>0&&r.top<ih){const p=Math.min(1,Math.max(0,-r.top/(r.height-ih)))*(NP+.2);
+    pgs.forEach((pg,i)=>{const f=Math.min(1,Math.max(0,p-i)),e3=f<.5?2*f*f:1-Math.pow(-2*f+2,2)/2;pg.style.transform=`rotateY(${(-e3*180).toFixed(1)}deg)`;pg.style.zIndex=f>.5?i:NP-i});
+    const n=Math.floor(p);if(n!==pgPrev){pgPrev=n;buzz(12);if(AC&&soundOn)bell(hz(['E6','G6','A6','C7','D7','E7'][n%6]),AC.currentTime,.05,.9)}}
+  requestAnimationFrame(fxMore)})(0);
 </script>
 </body>
 </html>
